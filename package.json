@@ -1,0 +1,36 @@
+{
+  "name": "my-vue-app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "lint": "eslint --ext .js,.vue,.ts src",
+    "lint:fix": "npx eslint ./src/**/*.vue --fix",
+    "stylelint": "npx stylelint --aei .vue src",
+    "stylint:fix": "npx stylelint ./src/**/*.vue --fix"
+  },
+  "dependencies": {
+    "vue": "^3.2.37"
+  },
+  "devDependencies": {
+    "@types/node": "^18.7.13",
+    "@typescript-eslint/eslint-plugin": "^5.35.1",
+    "@typescript-eslint/parser": "^5.35.1",
+    "@vitejs/plugin-vue": "^3.0.3",
+    "eslint": "^8.22.0",
+    "eslint-plugin-vue": "^9.4.0",
+    "husky": "^4.3.8",
+    "lint-staged": "^13.0.3",
+    "postcss-html": "^1.5.0",
+    "sass": "^1.54.5",
+    "stylelint": "^14.11.0",
+    "stylelint-config-standard-scss": "^5.0.0",
+    "stylelint-scss": "^4.3.0",
+    "typescript": "^4.6.4",
+    "vite": "^3.0.7",
+    "vue-tsc": "^0.39.5"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./", // 设置baseUrl来告诉编译器到哪里去查找模块。 所有非相对模块导入都会被当做相对于 baseUrl。
+    "target": "ESNext",
+    "useDefineForClassFields": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "strict": true,
+    "jsx": "preserve",
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true, // 将每个文件作为单独的模块
+    "esModuleInterop": true,
+    "lib": ["ESNext", "DOM"],
+    "skipLibCheck": true, // 忽略所有的声明文件（ *.d.ts）的类型检查
+    "paths": { // 模块名到基于 注意"paths"是相对于"baseUrl"进行解析 baseUrl的路径映射的列表 配置了路径别名resolve.alias，为了让编译 ts 时也能够解析对应的路径，我们还需要配置 paths 选项：
+      "@/*": ["src/*"],
+      "views/*": ["src/views/*"],
+      "components/*": ["src/components/*"],
+      "assets/*": ["src/assets/*"]
+     }
+  },
+  "exclude": ["node_modules","dist"], // 配置不需要编译的文件范围 将第三方依赖包、打包后的静态文件都排除在外。
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"], // 指定需要编译的文件范围 默认是对 src 下的 .ts、.d.ts、.tsx、.vue结尾的文件都需要进行编译
+  "references": [{ "path": "./tsconfig.node.json" }] // references属性是 TypeScript 3.0 的新特性，允许将 TypeScript 程序拆分结构化。这和我们写 vue 组件的思想有着异曲同工之妙，避免了在一个文件中处理过多的内容，而是通过拆分成多个文件，分别配置不同的部分，达到更加清晰，可维护性更高的目的。
+}
